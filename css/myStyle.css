@@ -1,0 +1,114 @@
+.grid-flip-cards{
+  margin: 0 auto;
+  width: 100%;
+  height: 240vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(33.33%, 1fr));
+}
+
+.flip-card-container{
+  font-size: 1.25rem;
+  border: 0;
+  position: relative;
+  padding: 0;
+}
+
+.flip-card{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  cursor: pointer;
+  backface-visibility: hidden;
+  transition: 1s;
+  margin: .5rem;
+}
+
+.flip-card.flip-card-front{
+  transform: perspective(500px) rotateY(0deg);
+} 
+
+.flip-card.flip-card-back{
+  padding: 1rem;
+  background-color: #F8F8F8;
+  text-align: center;
+  transform: perspective(500px) rotateY(180deg);
+}
+
+.flip-card-container:hover .flip-card.flip-card-front{
+  transform: perspective(500px) rotateY(180deg);
+}
+
+.flip-card-container:hover .flip-card.flip-card-back{
+  transform: perspective(500px) rotateY(360deg);
+}
+
+.flip-card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8; /* Opacidad del fondo */
+}
+
+.flip-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .7); /* Color y opacidad del overlay */
+  z-index: -1;
+}
+
+.flip-card-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, .7); /* Color y opacidad del overlay */
+  z-index: 1;
+}
+
+.flip-card-icon {
+  width: 25%;
+  height: 25%;
+}
+
+.flip-card-title {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: #000;
+  font-family: "Teko",sans-serif;
+}
+
+.flip-card-front .flip-card-title {
+  color: #fff;
+}
+
+@media screen and (max-width: 992px) {
+  .grid-flip-cards{
+    height: 400vh;
+    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .grid-flip-cards{
+    height: 900vh;
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
+}
