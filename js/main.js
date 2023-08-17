@@ -77,7 +77,7 @@
         dots: true,
         items: 1,
         dotsData: true,
-    });
+    });    
 
     
 })(jQuery);

@@ -1,3 +1,45 @@
+/* Carousel statico */
+
+.static-carousel{
+  width: 100%;
+  height: 100vh;
+  background-color: aqua;
+  position: relative;
+  overflow: hidden;
+}
+.static-carousel-bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#static-carousel-item-container{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 300%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.static-carousel-item{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .7); /* Color y opacidad del overlay */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* flip cards */
 .grid-flip-cards{
   margin: 0 auto;
   width: 100%;
