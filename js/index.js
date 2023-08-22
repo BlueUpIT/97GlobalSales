@@ -1,5 +1,5 @@
 const carousel = document.getElementById('static-carousel-item-container');
-const intervalDuration = 3000; // Intervalo de tiempo en milisegundos
+const intervalDuration = 8000; // Intervalo de tiempo en milisegundos
 let anchoCard  = carousel.children[0].clientWidth;
 let contador = 1;
 window.addEventListener("resize", () => {
@@ -30,7 +30,7 @@ function startSlideAnimation() {
       carousel.style.transition = "none";
       contador = 1;
       setTimeout(startSlideAnimation, intervalDuration);
-    }, 1000); // Tiempo de espera en milisegundos
+    }, 2000); // Tiempo de espera en milisegundos
   } else {
     setTimeout(startSlideAnimation, intervalDuration);
   }
