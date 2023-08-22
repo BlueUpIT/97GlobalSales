@@ -7,22 +7,20 @@ let $carouselSectionLast = $carouselSection[$carouselSection.length-1];
 const $flipCardContainer = document.querySelector(".grid-flip-cards");
 const setFlipCardHeight = () => {
   let width = window.innerWidth;
+  let cardWidth = $flipCardContainer.children[0].offsetWidth;
   let rows = 0;
   let height = 0;
   if(width >= 992) {
     rows = parseInt($flipCardContainer.children.length / 3);
     if($flipCardContainer.children.length > rows*3) rows+=1;
-    height = rows * 70;
   } else if( width < 992 && width > 767 ) {
     rows = parseInt($flipCardContainer.children.length / 2);
     if($flipCardContainer.children.length > rows*2) rows+=1;
-    height = rows * 70;
   } else {
     rows = $flipCardContainer.children.length
-    height = rows * 100;
   }
-  console.log(`${rows * 80}vh`);
-  $flipCardContainer.style.height = `${height}vh`;
+    height = rows * cardWidth;
+  $flipCardContainer.style.height = `${height}px`;
 }
 
 setFlipCardHeight();
@@ -78,15 +76,6 @@ $carousel.addEventListener('touchend', (e) => {
     const touchDifference = touchEndX - touchStartX;
     touchDifference > 50 ? moveCarouselLeft() : moveCarouselRight();
     touchStartX = null;
-  if (contador >= carousel.children.length) {
-    setTimeout(() => {
-      carousel.style.transform = `translate(0px)`;
-      carousel.style.transition = "none";
-      contador = 1;
-      setTimeout(startSlideAnimation, intervalDuration);
-    }, 1000); // Tiempo de espera en milisegundos
-  } else {
-    setTimeout(startSlideAnimation, intervalDuration);
   }
 })
 
