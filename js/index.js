@@ -27,7 +27,7 @@ const setFlipCardHeight = () => {
 
 setFlipCardHeight();
 
-const intervalDuration = 3000; // Intervalo de tiempo en milisegundos
+const intervalDuration = 8000; // Intervalo de tiempo en milisegundos
 let anchoCard  = $carousel.children[0].clientWidth;
 let touchStartX = null;
 let intervalHandler;
@@ -66,7 +66,6 @@ const moveCarouselLeft = () => {
   clearInterval(intervalHandler);
   intervalHandler = setInterval(moveCarouselRight, intervalDuration);
 } 
-
 $btnCarouselRight.addEventListener('click', moveCarouselRight);
 $btnCarouselLeft.addEventListener('click', moveCarouselLeft);
 $carousel.addEventListener('touchstart', (e) => {
@@ -79,6 +78,15 @@ $carousel.addEventListener('touchend', (e) => {
     const touchDifference = touchEndX - touchStartX;
     touchDifference > 50 ? moveCarouselLeft() : moveCarouselRight();
     touchStartX = null;
+  if (contador >= carousel.children.length) {
+    setTimeout(() => {
+      carousel.style.transform = `translate(0px)`;
+      carousel.style.transition = "none";
+      contador = 1;
+      setTimeout(startSlideAnimation, intervalDuration);
+    }, 1000); // Tiempo de espera en milisegundos
+  } else {
+    setTimeout(startSlideAnimation, intervalDuration);
   }
 })
 
