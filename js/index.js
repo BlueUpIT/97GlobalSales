@@ -1,10 +1,71 @@
-const $carousel = document.getElementById('static-carousel-item-container');
-const $btnCarouselLeft = document.getElementById('btn-static-carousel-left');
-const $btnCarouselRight = document.getElementById('btn-static-carousel-right');
-let $carouselSection = document.querySelectorAll(".static-carousel-item");
-let $carouselSectionLast = $carouselSection[$carouselSection.length-1];
-
+const $carousel = document.getElementById('carousel-container');
 const $flipCardContainer = document.querySelector(".grid-flip-cards");
+const $blinkSpan = document.createElement('span');
+$blinkSpan.classList.add('blink');
+$blinkSpan.innerHTML = '_';
+let currentTextIndex = 0;
+let currentLetterIndex = 0;
+let letterIndex = 0;
+
+let isDeleting = false;
+
+const info = [
+  {
+    title: "97GlobalSales",
+    btnText:"Read More",
+    btnHref: ""
+  },
+  {
+    title: "CONNECT, CREATE",
+    btnText:"WHATSAPP",
+    btnHref: ""
+  },
+  {
+    title: "MULTIPLY, PRESERVE",
+    btnText:"Read More",
+    btnHref: ""
+  }
+]
+
+function displayText() {
+    const currentText = info[currentTextIndex];
+    const textToShow = isDeleting
+    ? currentText.title.substring(0, currentLetterIndex - 1)
+    : currentText.title.substring(0, currentLetterIndex + 1);
+      
+  
+    $carousel.children[0].textContent = textToShow;
+    $carousel.children[0].appendChild($blinkSpan.cloneNode(true));
+    
+    $carousel.children[1].textContent = currentText.btnText;
+    $carousel.children[1].setAttribute('href',currentText.btnHref);
+    
+    if (!isDeleting) {
+      currentLetterIndex++;
+    } else {
+      currentLetterIndex--;
+    }
+
+    if(currentLetterIndex === currentText.title.length +1){
+      setTimeout(() => {
+        isDeleting = true;
+        currentLetterIndex = currentText.title.length;
+      }, intervalDuration);
+    }
+   
+    
+    if (currentLetterIndex === 0 && isDeleting) {
+      
+      isDeleting = false;
+      currentTextIndex = (currentTextIndex + 1) % info.length;
+    }
+    
+    setTimeout(displayText, isDeleting ? 50 : 200);
+}
+
+displayText();
+
+
 const setFlipCardHeight = () => {
   let width = window.innerWidth;
   let cardWidth = $flipCardContainer.children[0].offsetWidth;
@@ -26,63 +87,18 @@ const setFlipCardHeight = () => {
 setFlipCardHeight();
 
 const intervalDuration = 8000; // Intervalo de tiempo en milisegundos
-let anchoCard  = $carousel.children[0].clientWidth;
 let touchStartX = null;
 let intervalHandler;
 
-$carousel.insertAdjacentElement("afterbegin", $carouselSectionLast);
 
 
 window.addEventListener("resize", () => {
-  setCarouselWidth();
   setFlipCardHeight();
 })
 
-const moveCarouselRight = () => {
-  let $carouselSectionFirst = document.querySelectorAll(".static-carousel-item")[0];
-  $carousel.style.marginLeft = "-200%";
-  $carousel.style.transition = "all 1.5s";
-  setTimeout(() => {
-    $carousel.style.transition = "none";
-    $carousel.insertAdjacentElement("beforeend", $carouselSectionFirst);
-    $carousel.style.marginLeft = "-100%";
-  }, 1500);
-  clearInterval(intervalHandler);
-  intervalHandler = setInterval(moveCarouselRight, intervalDuration);
-} 
 
-const moveCarouselLeft = () => {
-  $carouselSection = document.querySelectorAll(".static-carousel-item");
-  $carouselSectionLast = $carouselSection[$carouselSection.length-1];
-  $carousel.style.marginLeft = "0%";
-  $carousel.style.transition = "all 1.5s";
-  setTimeout(() => {
-    $carousel.style.transition = "none";
-    $carousel.insertAdjacentElement("afterbegin", $carouselSectionLast);
-    $carousel.style.marginLeft = "-100%";
-  }, 1500);
-  clearInterval(intervalHandler);
-  intervalHandler = setInterval(moveCarouselRight, intervalDuration);
-} 
-$btnCarouselRight.addEventListener('click', moveCarouselRight);
-$btnCarouselLeft.addEventListener('click', moveCarouselLeft);
-$carousel.addEventListener('touchstart', (e) => {
-  touchStartX = e.touches[0].clientX;
-})
 
-$carousel.addEventListener('touchend', (e) => {
-  if(touchStartX !== null) {
-    const touchEndX = e.changedTouches[0].clientX;
-    const touchDifference = touchEndX - touchStartX;
-    touchDifference > 50 ? moveCarouselLeft() : moveCarouselRight();
-    touchStartX = null;
-  }
-})
 
-const setCarouselWidth = () => {
-  let width = $carousel.children.length * 100;
-  $carousel.style.width = `${width}%`;
-}
 
-setCarouselWidth();
-intervalHandler = setInterval(moveCarouselRight, intervalDuration);
+
+// intervalHandler = setInterval(moveCarouselRight, intervalDuration);
