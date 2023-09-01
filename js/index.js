@@ -9,6 +9,7 @@ import spyScroll from "./dom/spyScroll.js";
 
 window.addEventListener("resize", () => {
   setFlipCardHeight();
+  spyScroll();
 })
 
 document.addEventListener('DOMContentLoaded', (e) => {
