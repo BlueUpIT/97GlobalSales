@@ -192,7 +192,7 @@
 .card-icon{
   position: absolute;
   inset: 0 0 0 0;
-  z-index: 1040;
+  z-index: 1010;
   background-color: rgba(0, 0, 0, .3);
 }
 
