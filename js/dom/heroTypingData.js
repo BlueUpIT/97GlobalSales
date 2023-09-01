@@ -1,12 +1,8 @@
 const $carousel = document.getElementById('carousel-container');
 
-const $blinkSpan = document.createElement('span');
-$blinkSpan.classList.add('blink');
-$blinkSpan.innerHTML = '_';
 
 let currentTextIndex = 0;
 let currentLetterIndex = 0;
-let letterIndex = 0;
 let isDeleting = false;
 const intervalDuration = 8000; // Intervalo de tiempo en milisegundos
 
@@ -37,7 +33,6 @@ export default function heroTypingData() {
     
 
   $carousel.children[0].textContent = textToShow;
-  $carousel.children[0].appendChild($blinkSpan.cloneNode(true));
   
   $carousel.children[1].textContent = currentText.btnText;
   $carousel.children[1].setAttribute('href',currentText.btnHref);
