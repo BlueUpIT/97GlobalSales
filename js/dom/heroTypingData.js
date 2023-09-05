@@ -8,18 +8,23 @@ const intervalDuration = 8000; // Intervalo de tiempo en milisegundos
 
 const info = [
   {
-    title: "97GlobalSales",
-    btnText:"Read More",
-    btnHref: ""
-  },
-  {
-    title: "CONNECT, CREATE",
+    title: "Open your business in the United States",
     btnText:"WHATSAPP",
     btnHref: ""
   },
   {
-    title: "MULTIPLY, PRESERVE",
-    btnText:"Read More",
+    title: "Acquire wisdom",
+    btnText:"WHATSAPP",
+    btnHref: ""
+  },
+  {
+    title: "Take action",
+    btnText:"WHATSAPP",
+    btnHref: ""
+  },
+  {
+    title: "Start your digital business",
+    btnText:"WHATSAPP",
     btnHref: ""
   }
 ]
