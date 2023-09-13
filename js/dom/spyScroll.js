@@ -7,9 +7,10 @@ export default function spyScroll () {
       const id = entry.target.getAttribute('id');
       if(entry.isIntersecting){
         document.querySelector(`a[data-scroll-spy][href='#${id}']`)
-        .classList.add('active');
+          .classList.add('active');
       } else {
-        document.querySelector(`a[data-scroll-spy][href='#${id}']`).classList.remove('active');
+        document.querySelector(`a[data-scroll-spy][href='#${id}']`)
+          .classList.remove('active');
       }
     });
   }
