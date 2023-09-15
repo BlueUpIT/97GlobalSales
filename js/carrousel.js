@@ -39,14 +39,10 @@ const dragStop = () => {
 
 const infiniteScroll = () => {
     if(carousel.scrollLeft === 0) {
-			console.log("SETRABA");
         carousel.classList.add("no-transition");
         carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
-        // carousel.scrollLeft = carousel.scrollWidth - 1;
-				console.log(carousel.scrollLeft);
         carousel.classList.remove("no-transition");
     }
-    // If the carousel is at the end, scroll to the beginning
     else if(Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth) {
         carousel.classList.add("no-transition");
         carousel.scrollLeft = carousel.offsetWidth;
