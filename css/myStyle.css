@@ -167,6 +167,10 @@
 	font-family: 'Montserrat' sans-serif 
 }
 
+.flip-card-body {
+  font-size: 1.25rem;
+}
+
 .flip-card-front .flip-card-title {
   color: #fff;
 }

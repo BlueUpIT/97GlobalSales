@@ -1,9 +1,15 @@
 /********** Template CSS **********/
 :root {
+  
   --primary: #b78d65;
   --light: #f8f8f8;
   --dark: #252525;
 }
+
+*{
+  font-size: 15px;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
 }

@@ -2,28 +2,39 @@ export default function spyScroll () {
   const $sections = document.querySelectorAll('div[data-scroll-spy]');
   const windowWidth = window.innerWidth;
 
+  let activeLink = document.querySelector(`a[data-scroll-spy][href='#home']`);
+
   const cb = (entries) => {
     entries.forEach( (entry) => {
+      console.log(entry.target);
       const id = entry.target.getAttribute('id');
+      const link = document.querySelector(`a[data-scroll-spy][href='#${id}']`);
       if(entry.isIntersecting){
-        document.querySelector(`a[data-scroll-spy][href='#${id}']`)
-          .classList.add('active');
+          if(activeLink){
+            activeLink.classList.remove('active');
+          }
+          link.classList.add('active');
+          activeLink = link;
       } else {
-        document.querySelector(`a[data-scroll-spy][href='#${id}']`)
-          .classList.remove('active');
+        link.classList.remove('active');
       }
     });
   }
   let thresholdSize;
 
   if(windowWidth < 992 && windowWidth > 767){
+    console.log("Pantalla Mediana");
+
     thresholdSize = [0.2, 0.75]
 
   } else if( windowWidth < 767) {
+    console.log("Pantalla Chica");
+
     thresholdSize = [0.10, 0.85]
 
   } else {
-    thresholdSize = [0.25, 0.7]
+    console.log("Pantalla grande");
+    thresholdSize = [0.25, 0.9]
   }
 
   const observer = new IntersectionObserver(cb,{
