@@ -216,13 +216,8 @@ h6,
   background: var(--dark);
 }
 
-.fact-item .fact-icon i {
-  color: var(--primary);
-  transition: 0.5;
-}
-
-.fact-item:hover .fact-icon i {
-  color: #ffffff;
+.fact-item .fact-icon img {
+  width: 60%;
 }
 
 /*** About & Feature ***/
