@@ -18,7 +18,6 @@
   let lastScrollTop = 0;
   $(window).scroll(function () {
     var st = $(this).scrollTop();
-    console.log(st);
 
     if (st > 150 && st < 300 && st > lastScrollTop) {
       $(".sticky-top")
@@ -39,16 +38,13 @@
       }
     }
     if (st === 0) {
-      console.log("me ejecuto en 0");
       $(".sticky-top")
         .addClass("navbar-inicio")
         .removeClass("animacion-hacia-arriba navbar-scroll");
     }
     if (st > 150) {
       $(".navbar-item-link").addClass("nav-links-dark").removeClass("navbar-item-link");
-			console.log("texto oscuro");
     } else if (st < 150) {
-			console.log("texto claro");
       $(".nav-links-dark").addClass("navbar-item-link").removeClass("nav-links-dark");
     }
     lastScrollTop = st;

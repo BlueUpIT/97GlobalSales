@@ -50,9 +50,24 @@
 	border: none;
 }
 
-.card .img img {
-  width: 200px;
+.carousel .card .img {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  padding: 0 20px;
 }
+
+
+.card .img img {
+  max-width: 100%;
+  height: auto;
+}
+.card .img.img-height img{
+  height: 80%;
+  width: auto;
+}
+
 
 @media screen and (max-width: 900px) {
 	.carousel-container .carousel {

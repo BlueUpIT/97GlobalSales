@@ -38,7 +38,6 @@ const dragStop = () => {
 }
 
 const infiniteScroll = () => {
-		console.log(carousel.scrollLeft);
     if(carousel.scrollLeft === 0) {
 			console.log("SETRABA");
         carousel.classList.add("no-transition");
