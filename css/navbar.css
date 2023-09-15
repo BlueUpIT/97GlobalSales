@@ -24,7 +24,7 @@
 
 .nav-links-dark {
 	margin-right: 30px;
-  padding: 30px 0;
+  padding: 10px 0;
   color: var(--dark);
   font-weight: 500;
   text-transform: uppercase;
@@ -40,7 +40,7 @@
 @media (max-width: 991.98px) {
 	.navbar .navbar-nav .navbar-item-link {
 		margin-right: 0;
-    padding: 10px 0;
+    padding: 0 0;
   }
 	
   .navbar .navbar-nav {
@@ -111,4 +111,9 @@
 .navbar .navbar-nav .nav-links-dark:hover,
 .navbar .navbar-nav .nav-links-dark.active {
 	color: var(--primary) !important;
+}
+
+.navbar-desplegada {
+	background-color: white;
+	overflow-y: auto !important;
 }

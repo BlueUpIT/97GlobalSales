@@ -18,7 +18,7 @@
   let lastScrollTop = 0;
   $(window).scroll(function () {
     var st = $(this).scrollTop();
-    console.log(st);
+    const anchoPagina = $(window).width();
 
     if (st > 150 && st < 300 && st > lastScrollTop) {
       $(".sticky-top")
@@ -39,17 +39,17 @@
       }
     }
     if (st === 0) {
-      console.log("me ejecuto en 0");
       $(".sticky-top")
         .addClass("navbar-inicio")
         .removeClass("animacion-hacia-arriba navbar-scroll");
     }
-    if (st > 150) {
-      $(".navbar-item-link").addClass("nav-links-dark").removeClass("navbar-item-link");
-			console.log("texto oscuro");
-    } else if (st < 150) {
-			console.log("texto claro");
-      $(".nav-links-dark").addClass("navbar-item-link").removeClass("nav-links-dark");
+		// const boton = $("#navbarCollapseButton");
+		// const ariaExpanded = boton.attr("aria-expanded");
+    if (st >= 150 && anchoPagina > 991) {
+			$(".nav-link-selector").addClass("nav-links-dark").removeClass("navbar-item-link");
+    } else if (st < 150 && anchoPagina > 991) {
+			console.log("adasdasdasdasdad");
+      $(".nav-link-selector").addClass("navbar-item-link").removeClass("nav-links-dark");
     }
     lastScrollTop = st;
   });
