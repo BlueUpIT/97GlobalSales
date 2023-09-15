@@ -1,0 +1,114 @@
+:root {
+	--primary: #B78D65;
+	--light: #F8F8F8;
+	--dark: #252525;
+}
+
+.navbar .dropdown-toggle::after {
+  border: none;
+  content: "\f107";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+.navbar .navbar-nav .navbar-item-link{
+  margin-right: 30px;
+  padding: 30px 0;
+  color: var(--light) !important;
+  font-weight: 500;
+  text-transform: uppercase;
+  outline: none;
+}
+
+.nav-links-dark {
+	margin-right: 30px;
+  padding: 30px 0;
+  color: var(--dark);
+  font-weight: 500;
+  text-transform: uppercase;
+  outline: none;
+}
+
+
+.navbar.sticky-top {
+	top: -100px;
+  /* transition: .5s; */
+}
+
+@media (max-width: 991.98px) {
+	.navbar .navbar-nav .navbar-item-link {
+		margin-right: 0;
+    padding: 10px 0;
+  }
+	
+  .navbar .navbar-nav {
+		border-top: 1px solid #eeeeee;
+  }
+}
+
+@media (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu {
+		display: block;
+    visibility: hidden;
+    top: 100%;
+    transform: rotateX(-75deg);
+    transform-origin: 0% 0%;
+    transition: 0.5s;
+    opacity: 0;
+  }
+	
+  .navbar .nav-item:hover .dropdown-menu {
+		transform: rotateX(0deg);
+    visibility: visible;
+    transition: 0.5s;
+    opacity: 1;
+  }
+}
+.navbar-inicio {
+	position: absolute !important;
+  width: 100% !important;
+  top: 56px !important;
+  background-color: #00000000 !important;
+}
+
+.navbar-scroll {
+	width: 100% !important;
+  position: fixed !important;
+  top: 0 !important;
+  background-color: #ffffff !important;
+  color: var(--dark) !important;
+}
+.animacion-hacia-abajo {
+	animation: moverDesdeArriba 0.5s ease-out !important;
+}
+.animacion-hacia-arriba {
+	animation: salirHaciaArriba 0.3s ease-in-out !important;
+}
+
+@keyframes moverDesdeArriba {
+	0% {
+		transform: translateY(-100%);
+  }
+  100% {
+		transform: translateY(0);
+  }
+}
+
+@keyframes salirHaciaArriba {
+	0% {
+		transform: translateY(0);
+  }
+  100% {
+		transform: translateY(-100%);
+  }
+}
+.navbar .navbar-nav .navbar-item-link:hover,
+.navbar .navbar-nav .navbar-item-link.active {
+	color: var(--primary) !important;
+}
+.navbar .navbar-nav .nav-links-dark:hover,
+.navbar .navbar-nav .nav-links-dark.active {
+	color: var(--primary) !important;
+}
