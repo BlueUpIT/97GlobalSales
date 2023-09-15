@@ -25,12 +25,15 @@
         .addClass("shadow-sm navbar-scroll animacion-hacia-abajo")
         .removeClass("navbar-inicio")
         .css("z-index: 100");
+        $(".sticky-top a").find("img.me-3").attr("src","img/Logo/LOGO_BLANCO_CON_TEXTO-removebg-preview.png");
     }
     if (st < 300 && st < lastScrollTop && lastScrollTop > 150) {
       if (!$(".sticky-top").hasClass("animacion-hacia-arriba")) {
         $(".sticky-top")
           .addClass("animacion-hacia-arriba")
           .removeClass("animacion-hacia-abajo");
+          $(".sticky-top a").find("img.me-3").attr("src","img/Logo/logoinverter.png");
+
         setTimeout(() => {
           $(".sticky-top")
             .addClass("navbar-inicio")
@@ -42,6 +45,7 @@
       $(".sticky-top")
         .addClass("navbar-inicio")
         .removeClass("animacion-hacia-arriba navbar-scroll");
+        $(".sticky-top a").find("img.me-3").attr("src","img/Logo/logoinverter.png");
     }
 		// const boton = $("#navbarCollapseButton");
 		// const ariaExpanded = boton.attr("aria-expanded");
