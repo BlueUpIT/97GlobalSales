@@ -38,7 +38,6 @@ const dragStop = () => {
 }
 
 const infiniteScroll = () => {
-    // If the carousel is at the beginning, scroll to the end
 		console.log(carousel.scrollLeft);
     if(carousel.scrollLeft === 0) {
 			console.log("SETRABA");
@@ -54,15 +53,12 @@ const infiniteScroll = () => {
         carousel.scrollLeft = carousel.offsetWidth;
         carousel.classList.remove("no-transition");
     }
-
-    // Clear existing timeout & start autoplay if mouse is not hovering over carousel
     clearTimeout(timeoutId);
     if(!wrapper.matches(":hover")) autoPlay();
 }
 
 const autoPlay = () => {
-    if(window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
-    // Autoplay the carousel after every 2500 ms
+    if(window.innerWidth < 800 || !isAutoPlay) return;
     timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 2000);
 }
 autoPlay();
