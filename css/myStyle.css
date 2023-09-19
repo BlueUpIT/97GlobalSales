@@ -107,7 +107,8 @@
 } 
 
 .flip-card.flip-card-back{
-  padding: 1rem;
+  padding: 2rem;
+  padding-top: 4rem;
   background-color: #F8F8F8;
   text-align: center;
   transform: perspective(500px) rotateY(180deg);
@@ -161,18 +162,35 @@
 }
 
 .flip-card-title {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   font-weight: 500;
   color: #000;
 	font-family: 'Montserrat' sans-serif 
 }
 
 .flip-card-body {
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 .flip-card-front .flip-card-title {
   color: #fff;
+  margin-bottom: 6rem;
+}
+
+.flip-card-span {
+  color: #fff;
+  background-color: transparent;
+  padding: 12px 24px;
+  border: 1px solid #fff;
+  border-radius: 25px;
+  position: absolute;
+  bottom: 20%;
+  transition: .5s;
+}
+
+.flip-card-front:hover .flip-card-span {
+  background-color: #fff;
+  color: #000;
 }
 
 .blink{
