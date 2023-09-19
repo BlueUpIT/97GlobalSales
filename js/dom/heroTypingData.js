@@ -8,22 +8,22 @@ const intervalDuration = 8000; // Intervalo de tiempo en milisegundos
 
 const info = [
   {
-    title: "Open your business in the United States",
+    title: "PRESERVE 75% OFF CAPITAL TODAY",
     btnText:"WHATSAPP",
     btnHref: ""
   },
   {
-    title: "Acquire wisdom",
+    title: "WORK 100% 1 ON 1 WITH ME",
     btnText:"WHATSAPP",
     btnHref: ""
   },
   {
-    title: "Take action",
+    title: "OPEN YOUR UNITED STATES CORPORATION IN 15 DAYS",
     btnText:"WHATSAPP",
     btnHref: ""
   },
   {
-    title: "Start your digital business",
+    title: "MAKE YOUR FIRST DIGITAL SALE ON AMAZON IN 90 DAYS",
     btnText:"WHATSAPP",
     btnHref: ""
   }
