@@ -108,9 +108,9 @@
 
 .flip-card.flip-card-back{
   padding: 2rem;
-  padding-top: 4rem;
   background-color: #F8F8F8;
   text-align: center;
+  justify-content: center;
   transform: perspective(500px) rotateY(180deg);
 }
 

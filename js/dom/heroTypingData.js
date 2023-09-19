@@ -9,23 +9,15 @@ const intervalDuration = 8000; // Intervalo de tiempo en milisegundos
 const info = [
   {
     title: "PRESERVE 75% OFF CAPITAL TODAY",
-    btnText:"WHATSAPP",
-    btnHref: ""
   },
   {
     title: "WORK 100% 1 ON 1 WITH ME",
-    btnText:"WHATSAPP",
-    btnHref: ""
   },
   {
     title: "OPEN YOUR UNITED STATES CORPORATION IN 15 DAYS",
-    btnText:"WHATSAPP",
-    btnHref: ""
   },
   {
     title: "MAKE YOUR FIRST DIGITAL SALE ON AMAZON IN 90 DAYS",
-    btnText:"WHATSAPP",
-    btnHref: ""
   }
 ]
 
@@ -39,8 +31,6 @@ export default function heroTypingData() {
 
   $carousel.children[0].textContent = textToShow;
   
-  $carousel.children[1].textContent = currentText.btnText;
-  $carousel.children[1].setAttribute('href',currentText.btnHref);
   
   if (!isDeleting) {
     currentLetterIndex++;
