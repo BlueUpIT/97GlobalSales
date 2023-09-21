@@ -232,13 +232,13 @@ h6,
 .feature-img img {
   position: absolute;
   width: 60%;
-  height: 80%;
+  height: 50%;
   object-fit: cover;
 }
 
 .about-img img:last-child,
 .feature-img img:last-child {
-  margin: 20% 0 0 40%;
+  margin: 60% 0 0 40%;
 }
 
 .about-img::before,
@@ -251,6 +251,48 @@ h6,
   left: 20%;
   border: 5px solid var(--primary);
   z-index: -1;
+}
+.feature-img img {
+  object-fit: contain;
+}
+
+@media screen and (max-width: 1200px) {
+  .feature-img img {
+    width: auto;
+    height: 400px;
+  }
+  .feature-img img:last-child {
+    margin: 94% 0 0 40%;
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  .feature-img img {
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .feature-img img:last-child {
+    margin: 10% 0 0 60%;
+  }
+}
+
+@media screen and (max-width: 625px) {
+  .feature-img img {
+    height: 250px;
+  }
+  .feature-img img:last-child {
+    margin: 30% 0 0 60%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .feature-img img {
+    height: 200px;
+  }
+  .feature-img img:last-child {
+    margin: 40% 0 0 60%;
+  }
 }
 
 /*** Service ***/

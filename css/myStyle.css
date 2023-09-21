@@ -68,6 +68,7 @@
 }
 
 /* flip cards */
+
 .grid-flip-cards{
   margin: 0 auto;
   width: 100%;
@@ -222,6 +223,10 @@
   height: 320px;
 }
 
+.w-auto {
+  width: auto;
+}
+
 @media screen and (max-width: 1200px) {
   .height-240{
     height: 357px;
@@ -258,4 +263,16 @@
   100% {
     opacity: 1;
   }
+}
+
+/* PARALLAX */
+
+#parallax-banner{
+  height: 90vh;
+  max-width: 100%;
+  background-image: url("../img/Drive/DSCF8796.JPG");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
