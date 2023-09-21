@@ -236,8 +236,7 @@ h6,
   object-fit: cover;
 }
 
-.about-img img:last-child,
-.feature-img img:last-child {
+.about-img img:last-child {
   margin: 60% 0 0 40%;
 }
 
@@ -254,6 +253,9 @@ h6,
 }
 .feature-img img {
   object-fit: contain;
+}
+.feature-img img:last-child {
+  margin: 50% 0 0 50%;
 }
 
 @media screen and (max-width: 1200px) {
