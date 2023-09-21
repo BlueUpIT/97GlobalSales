@@ -231,13 +231,13 @@ h6,
 .about-img img,
 .feature-img img {
   position: absolute;
-  width: 60%;
+  width: fit-content;
   height: 50%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .about-img img:last-child {
-  margin: 60% 0 0 40%;
+  margin: 50% 0 0 60%;
 }
 
 .about-img::before,
@@ -255,7 +255,12 @@ h6,
   object-fit: contain;
 }
 .feature-img img:last-child {
-  margin: 50% 0 0 50%;
+  margin: 45% 0 0 40%;
+  height: 400px;
+}
+
+.text-about{
+  font-size: 1.2rem;
 }
 
 @media screen and (max-width: 1200px) {
@@ -264,36 +269,65 @@ h6,
     height: 400px;
   }
   .feature-img img:last-child {
-    margin: 94% 0 0 40%;
+    margin: 60% 0 0 12%;
+    height: 500px;
   }
-}
-
-@media screen and (max-width: 1070px) {
-  .feature-img img {
-    height: 350px;
+  .about-img img:last-child {
+    margin: 75% 0 0 50%;
+  }
+  .text-about{
+    font-size: .8rem;
   }
 }
 
 @media screen and (max-width: 991px) {
+  .about-img,
+  .feature-img{
+    height: 800px; 
+  }
+  .feature-img img {
+    height: 500px;
+  }
+  .about-img img:last-child {
+    margin: 50% 0 0 50%;
+  }
   .feature-img img:last-child {
-    margin: 10% 0 0 60%;
+    margin: 40% 0 0 35%;
+  }
+  .text-about{
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 767px ) {
+  .about-img{
+    height: 600px; 
+  }
+  .about-img img:last-child {
+    margin: 60% 0 0 50%;
+  }
+  .feature-img img:last-child {
+    margin: 45% 0 0 25%;
   }
 }
 
 @media screen and (max-width: 625px) {
   .feature-img img {
-    height: 250px;
+    height: 300px;
   }
   .feature-img img:last-child {
-    margin: 30% 0 0 60%;
+    margin: 50% 0 0 20%;
   }
 }
 @media screen and (max-width: 550px) {
   .feature-img img {
-    height: 200px;
+    height: 400px;
   }
   .feature-img img:last-child {
-    margin: 40% 0 0 60%;
+    margin: 55% 0 0 10%;
+  }
+  .text-about{
+    font-size: .8rem;
   }
 }
 

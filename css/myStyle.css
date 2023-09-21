@@ -67,6 +67,38 @@
   align-items: center;
 }
 
+.txt-title-hero{
+  font-size: 2.5rem;
+}
+
+@media screen and (max-width: 1630px) {
+  .txt-title-hero{
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (max-width: 1120px) {
+  .txt-title-hero{
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .txt-title-hero{
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 650px) {
+  .txt-title-hero{
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 545px) {
+  .txt-title-hero{
+    font-size: .7rem;
+  }
+}
+
 /* flip cards */
 
 .grid-flip-cards{

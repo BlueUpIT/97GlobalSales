@@ -22,6 +22,10 @@
   outline: none;
 }
 
+.navbar .navbar-nav .navbar-item-link:last-child{
+  margin-right: 0;
+}
+
 .nav-links-dark {
   margin-right: 30px;
   padding: 10px 0;
@@ -34,6 +38,18 @@
 .navbar.sticky-top {
   top: -100px;
   /* transition: .5s; */
+}
+@media screen and (max-width: 1330px ) {
+  .navbar .navbar-nav .navbar-item-link{
+    font-size: 1rem;
+    margin-right: 10px;
+  }
+}
+@media screen and (max-width: 1120px ) {
+  .navbar .navbar-nav .navbar-item-link{
+    font-size: .85rem;
+    margin-right: 5px;
+  }
 }
 
 @media (max-width: 991.98px) {
