@@ -1,20 +1,24 @@
-.carousel-container {
-  width: 100%;
-  position: relative;
+.carousel-div{
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
-	margin-top: 2rem;
+	margin-top: 40px;
+
+}
+.carousel-wrapper {
+  max-width: 1100px;
+  width: 100%;
+  position: relative;
 }
 
-.carousel-container .carousel{
+.carousel-wrapper .carousel{
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: calc((100% / 4) - 12px);
+  grid-auto-columns: calc((100% / 5) - 13.5px);
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  gap: 10px;
+  gap: 16px;
   border-radius: 8px;
   scroll-behavior: smooth;
   scrollbar-width: none;
@@ -29,67 +33,64 @@
   scroll-snap-type: none;
   scroll-behavior: auto;
 }
-.carousel.dragging .card {
+.carousel.dragging .card-logo {
   cursor: grab;
   user-select: none;
 }
-.carousel :where(.card, .img) {
+.carousel :where(.card-logo, .img-logo) {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.carousel .card {
+.carousel .card-logo {
   scroll-snap-align: start;
-  height: 150px;
+  height: 200px;
+  width: 206.5px;
   list-style: none;
-  background: #fff;
   cursor: pointer;
   padding-bottom: 15px;
   flex-direction: column;
   border-radius: 8px;
-	border: none;
+}
+.carousel .card-logo .img-logo {
+  height: 148px;
+  width: 206px;
+  border-radius: 50%;
+}
+.card-logo .img-logo img {
+  width: 150px;
+  object-fit: cover;
+}
+.carousel .card-logo .img-logo-aguila {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+  height: 148px;
+  width: 206px;
+}
+.card-logo .img-logo-aguila img {
+	height: 100px;
+  object-fit: cover;
+}
+.carousel .card-logo h2 {
+  font-weight: 500;
+  font-size: 1.56rem;
+  margin: 30px 0 5px;
+}
+.carousel .card-logo span {
+  color: #6A6D78;
+  font-size: 1.31rem;
 }
 
-.carousel .card .img {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center; 
-  padding: 0 20px;
-}
-
-
-.card .img img {
-  width: 90%;
-  height: auto;
-}
-.card .img.img-height img{
-  height: 80%;
-  width: auto;
-}
-
-
-@media screen and (max-width: 900px) {
-	.carousel-container .carousel {
-		grid-auto-columns: calc((100% / 3) - 9px);
+@media screen and (max-width: 1009px) {
+  .carousel-wrapper .carousel {
+    grid-auto-columns: calc((100% / 3) - 20px);
   }
 }
-@media screen and (max-width: 600px) {
-	.carousel-container .carousel {
-		grid-auto-columns: calc(100%/3) -9px;
+
+@media screen and (max-width: 652px) {
+  .carousel-wrapper .carousel {
+    grid-auto-columns: calc((100% / 2) - 1.5px);
   }
-	.carousel .card {
-		scroll-snap-align: start;
-		height: 100px;
-		list-style: none;
-		background: #fff;
-		cursor: pointer;
-		padding-bottom: 15px;
-		flex-direction: column;
-		border-radius: 8px;
-		border: none;
-	}
-	.card .img img {
-		width: 75px;
-	}
 }

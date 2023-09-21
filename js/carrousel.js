@@ -1,7 +1,7 @@
-const wrapper = document.querySelector(".carousel-container");
+const wrapper = document.querySelector(".carousel-wrapper");
 const carousel = document.querySelector(".carousel");
-const firstCardWidth = carousel.querySelector(".card").offsetWidth;
-
+const firstCardWidth = carousel.querySelector(".card-logo").offsetWidth;
+const arrowBtns = document.querySelectorAll(".wrapper i");
 const carouselChildrens = [...carousel.children];
 
 let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId;
@@ -43,18 +43,20 @@ const infiniteScroll = () => {
         carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
         carousel.classList.remove("no-transition");
     }
+    // If the carousel is at the end, scroll to the beginning
     else if(Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth) {
         carousel.classList.add("no-transition");
         carousel.scrollLeft = carousel.offsetWidth;
         carousel.classList.remove("no-transition");
     }
+
     clearTimeout(timeoutId);
     if(!wrapper.matches(":hover")) autoPlay();
 }
 
 const autoPlay = () => {
-    if(window.innerWidth < 800 || !isAutoPlay) return;
-    timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 2000);
+    if(window.innerWidth < 800 || !isAutoPlay) return; 
+    timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 2500);
 }
 autoPlay();
 
