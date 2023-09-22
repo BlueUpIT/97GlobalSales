@@ -6,6 +6,7 @@ export default function spyScroll () {
 
   const cb = (entries) => {
     entries.forEach( (entry) => {
+      console.log(entry.target);
       const id = entry.target.getAttribute('id');
       const link = document.querySelector(`a[data-scroll-spy][href='#${id}']`);
       if(entry.isIntersecting){
@@ -22,10 +23,17 @@ export default function spyScroll () {
   let thresholdSize;
 
   if(windowWidth < 992 && windowWidth > 767){
+    console.log("Pantalla Mediana");
+
     thresholdSize = [0.2, 0.75]
+
   } else if( windowWidth < 767) {
+    console.log("Pantalla Chica");
+
     thresholdSize = [0.10, 0.85]
+
   } else {
+    console.log("Pantalla grande");
     thresholdSize = [0.25, 0.9]
   }
 
