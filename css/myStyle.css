@@ -299,6 +299,9 @@
 
 /* PARALLAX */
 
+#services{
+  z-index: 1;
+}
 #parallax-banner{
   height: 90vh;
   max-width: 100%;
