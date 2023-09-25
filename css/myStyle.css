@@ -316,18 +316,19 @@ main{
 /* PARALLAX */
 
 #parallax-banner{
-  position: relative;
   background-image: url("../img/Drive/DSCF8796.JPG");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
-  position: fixed;
-  top: 0;
-  margin-top: -100vh;
+  -webkit-background-position:center center;
+  background-position: center center;
+  -webkit-background-attachment: fixed;
+  background-attachment: fixed;
   width: 100%;
   height: 100vh;
   position: -webkit-sticky; /* Safari */
   position: sticky;
+  margin-top: -100vh;
   top: 0;
   z-index: 0;
 }
