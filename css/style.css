@@ -236,30 +236,27 @@ h6,
   object-fit: contain;
 }
 
-.about-img img:last-child {
-  /* margin: 50% 0 0 60%; */
-  bottom: 0;
-  right: 0;
-}
+ 
 
 .about-img::before,
 .feature-img::before {
   position: absolute;
   content: "";
-  width: 60%;
+  width: 80%;
   height: 80%;
   top: 10%;
-  left: 20%;
+  left: 10%;
   border: 5px solid var(--primary);
   z-index: -1;
 }
 .feature-img img {
   object-fit: contain;
 }
+
+.about-img img:last-child,
 .feature-img img:last-child {
-  bottom: 0;
-  right: 0;  
-  height: 400px;
+  bottom: 0%;
+  right: 0%;  
 }
 
 .text-about{
