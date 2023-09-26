@@ -52,7 +52,6 @@
     if (st >= 150 && anchoPagina > 991) {
 			$(".nav-link-selector").addClass("nav-links-dark").removeClass("navbar-item-link");
     } else if (st < 150 && anchoPagina > 991) {
-			console.log("adasdasdasdasdad");
       $(".nav-link-selector").addClass("navbar-item-link").removeClass("nav-links-dark");
     }
     lastScrollTop = st;
