@@ -279,11 +279,11 @@ main{
   width: auto;
 }
 
-@media screen and (max-width: 1200px) {
+/* @media screen and (max-width: 1200px) {
   .height-240{
     height: 357px;
   }
-}
+} */
 
 
 
@@ -291,9 +291,9 @@ main{
   .grid-flip-cards{
     grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
   }
-  .height-240{
+  /* .height-240{
     height: 320px;
-  }
+  } */
   .bussiness-card:last-child{
     margin-top: 5rem;
   }
@@ -308,7 +308,7 @@ main{
   }
   .bussiness-card,
   .bussiness-card:last-child{
-    margin-top: 4rem;
+    margin-top: 6rem;
   }
 }
 
