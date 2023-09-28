@@ -39,16 +39,17 @@ export default function heroTypingData() {
   }
 
   if(currentLetterIndex === currentText.title.length +1){
-      isDeleting = true;
-      currentLetterIndex = currentText.title.length;
+      setTimeout(() => {
+        isDeleting = true;
+        currentLetterIndex = currentText.title.length;
+      },1000)
   }
  
   
   if (currentLetterIndex === 0 && isDeleting) {
-    
     isDeleting = false;
     currentTextIndex = (currentTextIndex + 1) % info.length;
   }
   
-  setTimeout(heroTypingData, isDeleting ? 50 : 200);
+  setTimeout(heroTypingData, 50 );
 }

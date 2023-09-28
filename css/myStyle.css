@@ -164,6 +164,7 @@ main{
   background-color: #F8F8F8;
   text-align: center;
   justify-content: center;
+  z-index: 2;
   transform: perspective(500px) rotateY(180deg);
 }
 
@@ -228,6 +229,7 @@ main{
 .flip-card-front .flip-card-title {
   color: #fff;
   margin-bottom: 6rem;
+  z-index: 2;
 }
 
 .flip-card-span {
