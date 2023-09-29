@@ -13,7 +13,12 @@ main{
   background-color: #fff;
   z-index: 0;
 }
-
+.b-alpha-black{
+  background-color: rgba(0, 0, 0, 0.473);
+}
+.scroll-y-none{
+  overflow-y: hidden;
+}
 /* Carousel statico */
 
 .static-carousel{
@@ -88,6 +93,10 @@ main{
   font-size: 2.5rem;
 }
 
+.blink{
+  animation: blink 0.7s infinite;
+}
+
 @media screen and (max-width: 1630px) {
   .txt-title-hero{
     font-size: 1.7rem;
@@ -116,6 +125,18 @@ main{
 @media screen and (max-width: 545px) {
   .txt-title-hero{
     font-size: 1.7rem;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -154,6 +175,7 @@ main{
   margin: .5rem;
   overflow: hidden;
   overflow-y: auto;
+  z-index: 1;
 }
 
 .flip-card.flip-card-front{
@@ -165,7 +187,7 @@ main{
   background-color: #F8F8F8;
   text-align: center;
   justify-content: center;
-  z-index: 2;
+  z-index: 1;
   transform: perspective(500px) rotateY(180deg);
 }
 
@@ -249,10 +271,6 @@ main{
   color: #000;
 }
 
-.blink{
-  animation: blink 0.7s infinite;
-}
-
 .img-container {
   position: absolute;
   inset: 0 0 0 0;
@@ -282,13 +300,10 @@ main{
   width: auto;
 }
 
-/* @media screen and (max-width: 1200px) {
-  .height-240{
-    height: 357px;
-  }
-} */
-
-
+.visible{
+  opacity: 1!important;
+  pointer-events: auto!important;
+}
 
 @media screen and (max-width: 992px) {
   .grid-flip-cards{
@@ -315,16 +330,58 @@ main{
   }
 }
 
-@keyframes blink {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: .5;
-  }
-  100% {
-    opacity: 1;
-  }
+/* MODAL */
+
+#img-modal-active{
+  cursor: pointer;
+  transition: all ease-in-out .7s;
+}
+
+#img-modal-active:hover{
+  transform: scale(1.1);
+  box-shadow: 0 0 1rem 1rem var(--primary-alpha);
+}
+
+#my-modal{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #00000094;
+  z-index: 1030;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal-img-container{
+  border: 0.5rem black solid;
+  box-shadow: 0px 0px 5px 4px #201111;
+  position: relative;
+}
+.modal-img-container img {
+  max-height: 90vh;
+  max-width: 90vw;
+}
+.modal-img-container span{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  line-height: 1rem;
+  cursor: pointer;  
+  transition: .5s;
+}
+
+.modal-img-container span:hover{
+  opacity: .7;
 }
 
 /* PARALLAX */
@@ -352,10 +409,6 @@ main{
   z-index: 2;
   background-color: white;
 }
-/* 
-#benefits{
-  margin-top: 100vh;
-} */
 
 .contact-info {
 	font-size: 1rem;
