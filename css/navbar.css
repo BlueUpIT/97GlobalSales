@@ -148,3 +148,25 @@
 
   background-color: var(--primary);
 }
+
+.nav-relative {
+	position: relative;
+}
+
+.language-button {
+  visibility: visible;
+	position: absolute;
+	top:0;
+	right:0;
+	margin: 20px;
+}
+
+@media screen and (min-width: 992px) {
+  .language-button {
+    visibility: hidden; 
+   
+  }
+}
+
+
+
