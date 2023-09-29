@@ -1,3 +1,4 @@
+import handleModal from "./dom/handleModal.js";
 import heroTypingData from "./dom/heroTypingData.js";
 import setCardHeight from "./dom/setCardHeight.js";
 import setFlipCardHeight from "./dom/setFlipCardHeight.js";
@@ -14,4 +15,5 @@ document.addEventListener('DOMContentLoaded', (e) => {
   heroTypingData();
   spyScroll();
   setCardHeight();
+  handleModal();
 })
