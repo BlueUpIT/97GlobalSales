@@ -115,9 +115,10 @@ main{
 }
 @media screen and (max-width: 545px) {
   .txt-title-hero{
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 }
+
 
 /* flip cards */
 
@@ -356,3 +357,6 @@ main{
   margin-top: 100vh;
 } */
 
+.contact-info {
+	font-size: 1rem;
+}

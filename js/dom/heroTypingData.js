@@ -42,7 +42,7 @@ export default function heroTypingData() {
       setTimeout(() => {
         isDeleting = true;
         currentLetterIndex = currentText.title.length;
-      },1000)
+      },1700)
   }
  
   
