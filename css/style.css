@@ -234,9 +234,7 @@ h6,
   width: fit-content;
   height: 60%;
   object-fit: contain;
-}
-
- 
+} 
 
 .about-img::before,
 .feature-img::before {
@@ -251,6 +249,10 @@ h6,
 }
 .feature-img img {
   object-fit: contain;
+}
+
+.about-img img:first-child{
+  height: 80%;
 }
 
 .about-img img:last-child,
@@ -279,10 +281,6 @@ h6,
     height: 80vh; 
   }
 
-  .about-img img{
-    width: 70%;
-    height: auto;
-  }
   .feature-img img {
     height: 60%;
   }
@@ -291,6 +289,12 @@ h6,
   }
   .text-about{
     font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-img img:first-child{
+    height: 60%;
   }
 }
 
