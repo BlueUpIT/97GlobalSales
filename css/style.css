@@ -578,3 +578,9 @@ h6,
 	font-size: calc(1rem + .6vh)
 }
 
+.img-telegram {
+	width: 100%;
+	height: auto;
+	border-radius: 15px;
+	box-shadow: 0 6px 20px #28b3fea4;
+}
