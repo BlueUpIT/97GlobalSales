@@ -231,7 +231,7 @@ h6,
 .about-img img,
 .feature-img img {
   position: absolute;
-  width: fit-content;
+  /* width: fit-content; */
   height: 60%;
   object-fit: contain;
 } 
