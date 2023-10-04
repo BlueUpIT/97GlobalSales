@@ -206,18 +206,23 @@ main {
   transform: perspective(500px) rotateY(180deg);
 }
 
+.flip-card-container:hover{
+  z-index: -200;
+}
+
+
 .flip-card-container:hover .flip-card.flip-card-front {
+  z-index: -100;
   transform: perspective(500px) rotateY(180deg);
   -webkit-transform: perspective(500px) rotateY(180deg);
-  z-index: -100;
   /* poner z index negativo -100 */
   /* O poner el transform en el padre */
 }
 
 .flip-card-container:hover .flip-card.flip-card-back {
+  z-index: -100;
   transform: perspective(500px) rotateY(360deg);
   -webkit-transform: perspective(500px) rotateY(360deg);
-  z-index: -100;
   /* poner z index negativo -100 */
 }
 
