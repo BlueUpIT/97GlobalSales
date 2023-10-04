@@ -212,7 +212,7 @@ main {
 
 
 .flip-card-container:hover .flip-card.flip-card-front {
-  z-index: -100;
+  z-index: -200;
   transform: perspective(500px) rotateY(180deg);
   -webkit-transform: perspective(500px) rotateY(180deg);
   /* poner z index negativo -100 */
@@ -220,7 +220,7 @@ main {
 }
 
 .flip-card-container:hover .flip-card.flip-card-back {
-  z-index: -100;
+  z-index: -200;
   transform: perspective(500px) rotateY(360deg);
   -webkit-transform: perspective(500px) rotateY(360deg);
   /* poner z index negativo -100 */
