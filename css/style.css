@@ -250,9 +250,9 @@ h6,
   object-fit: contain;
 }
 
-.about-img img:first-child{
+/* .about-img img:first-child{
   height: 80%;
-}
+} */
 
 .about-img img:last-child,
 .feature-img img:last-child {
@@ -566,7 +566,7 @@ h6,
 }
 
 .title-blink{
-	font-family: 'Bona Nova', serif;
+	font-family: 'Bona Nova', serif !important;
 }
 
 .btn-take-action {
