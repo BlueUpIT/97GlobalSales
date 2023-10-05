@@ -567,7 +567,7 @@ h6,
 }
 
 .title-blink{
-	font-family: 'Bona Nova', serif;
+	font-family: 'Bona Nova', serif !important;
 }
 
 .btn-take-action {
